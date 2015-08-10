@@ -30,6 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             this.paymentsView = new System.Windows.Forms.DataGridView();
+            this.clientnametestDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clientidtestDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idbillinginfotestDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.datebilledtestDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.amountbilledtestDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.billinginfotestBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.freelancetrackDataSet2BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.freelancetrackDataSet2 = new TestFreelanceTracker.freelancetrackDataSet2();
             this.billinginfoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.fullBillingInfoTable = new TestFreelanceTracker.FullBillingInfoTable();
             this.clientNameTxtBoxPayments = new System.Windows.Forms.TextBox();
@@ -45,30 +53,27 @@
             this.deletePaymentBtn = new System.Windows.Forms.Button();
             this.refreshPayments = new System.Windows.Forms.Button();
             this.billinginfoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.freelancetrackDataSet2 = new TestFreelanceTracker.freelancetrackDataSet2();
             this.billinginfoTableAdapter = new TestFreelanceTracker.freelancetrackDataSet2TableAdapters.billinginfoTableAdapter();
             this.billinginfoTableAdapter1 = new TestFreelanceTracker.FullBillingInfoTableTableAdapters.billinginfoTableAdapter();
             this.selectClientComboBox = new System.Windows.Forms.ComboBox();
             this.selectClientLbl = new System.Windows.Forms.Label();
-            this.freelancetrackDataSet2BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.billinginfotestBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.billinginfotestTableAdapter = new TestFreelanceTracker.freelancetrackDataSet2TableAdapters.billinginfotestTableAdapter();
-            this.clientnametestDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clientidtestDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idbillinginfotestDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.datebilledtestDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.amountbilledtestDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.amountBilledTxtBox = new System.Windows.Forms.TextBox();
+            this.amountBilledLbl = new System.Windows.Forms.Label();
+            this.viewReportBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.paymentsView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.billinginfotestBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.freelancetrackDataSet2BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.freelancetrackDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.billinginfoBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fullBillingInfoTable)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.billinginfoBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.freelancetrackDataSet2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.freelancetrackDataSet2BindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.billinginfotestBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // paymentsView
             // 
+            this.paymentsView.AllowUserToAddRows = false;
+            this.paymentsView.AllowUserToDeleteRows = false;
             this.paymentsView.AutoGenerateColumns = false;
             this.paymentsView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.paymentsView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -80,8 +85,59 @@
             this.paymentsView.DataSource = this.billinginfotestBindingSource;
             this.paymentsView.Location = new System.Drawing.Point(363, 36);
             this.paymentsView.Name = "paymentsView";
+            this.paymentsView.ReadOnly = true;
             this.paymentsView.Size = new System.Drawing.Size(480, 328);
             this.paymentsView.TabIndex = 0;
+            // 
+            // clientnametestDataGridViewTextBoxColumn
+            // 
+            this.clientnametestDataGridViewTextBoxColumn.DataPropertyName = "clientnametest";
+            this.clientnametestDataGridViewTextBoxColumn.HeaderText = "Client Name";
+            this.clientnametestDataGridViewTextBoxColumn.Name = "clientnametestDataGridViewTextBoxColumn";
+            this.clientnametestDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // clientidtestDataGridViewTextBoxColumn
+            // 
+            this.clientidtestDataGridViewTextBoxColumn.DataPropertyName = "clientidtest";
+            this.clientidtestDataGridViewTextBoxColumn.HeaderText = "Client ID";
+            this.clientidtestDataGridViewTextBoxColumn.Name = "clientidtestDataGridViewTextBoxColumn";
+            this.clientidtestDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // idbillinginfotestDataGridViewTextBoxColumn
+            // 
+            this.idbillinginfotestDataGridViewTextBoxColumn.DataPropertyName = "idbillinginfotest";
+            this.idbillinginfotestDataGridViewTextBoxColumn.HeaderText = "Invoice ID";
+            this.idbillinginfotestDataGridViewTextBoxColumn.Name = "idbillinginfotestDataGridViewTextBoxColumn";
+            this.idbillinginfotestDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // datebilledtestDataGridViewTextBoxColumn
+            // 
+            this.datebilledtestDataGridViewTextBoxColumn.DataPropertyName = "datebilledtest";
+            this.datebilledtestDataGridViewTextBoxColumn.HeaderText = "Date";
+            this.datebilledtestDataGridViewTextBoxColumn.Name = "datebilledtestDataGridViewTextBoxColumn";
+            this.datebilledtestDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // amountbilledtestDataGridViewTextBoxColumn
+            // 
+            this.amountbilledtestDataGridViewTextBoxColumn.DataPropertyName = "amountbilledtest";
+            this.amountbilledtestDataGridViewTextBoxColumn.HeaderText = "Amount";
+            this.amountbilledtestDataGridViewTextBoxColumn.Name = "amountbilledtestDataGridViewTextBoxColumn";
+            this.amountbilledtestDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // billinginfotestBindingSource
+            // 
+            this.billinginfotestBindingSource.DataMember = "billinginfotest";
+            this.billinginfotestBindingSource.DataSource = this.freelancetrackDataSet2BindingSource;
+            // 
+            // freelancetrackDataSet2BindingSource
+            // 
+            this.freelancetrackDataSet2BindingSource.DataSource = this.freelancetrackDataSet2;
+            this.freelancetrackDataSet2BindingSource.Position = 0;
+            // 
+            // freelancetrackDataSet2
+            // 
+            this.freelancetrackDataSet2.DataSetName = "freelancetrackDataSet2";
+            this.freelancetrackDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // billinginfoBindingSource1
             // 
@@ -145,7 +201,7 @@
             // dateBilledLbl
             // 
             this.dateBilledLbl.AutoSize = true;
-            this.dateBilledLbl.Location = new System.Drawing.Point(37, 196);
+            this.dateBilledLbl.Location = new System.Drawing.Point(37, 235);
             this.dateBilledLbl.Name = "dateBilledLbl";
             this.dateBilledLbl.Size = new System.Drawing.Size(58, 13);
             this.dateBilledLbl.TabIndex = 19;
@@ -153,14 +209,16 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(116, 190);
+            this.dateTimePicker1.CustomFormat = "yyyy-MM-dd";
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker1.Location = new System.Drawing.Point(116, 229);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker1.Size = new System.Drawing.Size(100, 20);
             this.dateTimePicker1.TabIndex = 20;
             // 
             // addPaymentBtn
             // 
-            this.addPaymentBtn.Location = new System.Drawing.Point(40, 241);
+            this.addPaymentBtn.Location = new System.Drawing.Point(40, 280);
             this.addPaymentBtn.Name = "addPaymentBtn";
             this.addPaymentBtn.Size = new System.Drawing.Size(112, 23);
             this.addPaymentBtn.TabIndex = 23;
@@ -170,40 +228,38 @@
             // 
             // editPaymentBtn
             // 
-            this.editPaymentBtn.Location = new System.Drawing.Point(40, 270);
+            this.editPaymentBtn.Location = new System.Drawing.Point(40, 309);
             this.editPaymentBtn.Name = "editPaymentBtn";
             this.editPaymentBtn.Size = new System.Drawing.Size(112, 23);
             this.editPaymentBtn.TabIndex = 24;
             this.editPaymentBtn.Text = "Edit Payment";
             this.editPaymentBtn.UseVisualStyleBackColor = true;
+            this.editPaymentBtn.Click += new System.EventHandler(this.editPaymentBtn_Click);
             // 
             // deletePaymentBtn
             // 
-            this.deletePaymentBtn.Location = new System.Drawing.Point(40, 299);
+            this.deletePaymentBtn.Location = new System.Drawing.Point(40, 338);
             this.deletePaymentBtn.Name = "deletePaymentBtn";
             this.deletePaymentBtn.Size = new System.Drawing.Size(112, 23);
             this.deletePaymentBtn.TabIndex = 25;
             this.deletePaymentBtn.Text = "Delete Payment";
             this.deletePaymentBtn.UseVisualStyleBackColor = true;
+            this.deletePaymentBtn.Click += new System.EventHandler(this.deletePaymentBtn_Click);
             // 
             // refreshPayments
             // 
-            this.refreshPayments.Location = new System.Drawing.Point(204, 241);
+            this.refreshPayments.Location = new System.Drawing.Point(204, 280);
             this.refreshPayments.Name = "refreshPayments";
             this.refreshPayments.Size = new System.Drawing.Size(112, 52);
             this.refreshPayments.TabIndex = 26;
             this.refreshPayments.Text = "Refresh Payment List";
             this.refreshPayments.UseVisualStyleBackColor = true;
+            this.refreshPayments.Click += new System.EventHandler(this.refreshPayments_Click);
             // 
             // billinginfoBindingSource
             // 
             this.billinginfoBindingSource.DataMember = "billinginfo";
             this.billinginfoBindingSource.DataSource = this.freelancetrackDataSet2;
-            // 
-            // freelancetrackDataSet2
-            // 
-            this.freelancetrackDataSet2.DataSetName = "freelancetrackDataSet2";
-            this.freelancetrackDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // billinginfoTableAdapter
             // 
@@ -231,55 +287,44 @@
             this.selectClientLbl.TabIndex = 22;
             this.selectClientLbl.Text = "Select Client";
             // 
-            // freelancetrackDataSet2BindingSource
-            // 
-            this.freelancetrackDataSet2BindingSource.DataSource = this.freelancetrackDataSet2;
-            this.freelancetrackDataSet2BindingSource.Position = 0;
-            // 
-            // billinginfotestBindingSource
-            // 
-            this.billinginfotestBindingSource.DataMember = "billinginfotest";
-            this.billinginfotestBindingSource.DataSource = this.freelancetrackDataSet2BindingSource;
-            // 
             // billinginfotestTableAdapter
             // 
             this.billinginfotestTableAdapter.ClearBeforeFill = true;
             // 
-            // clientnametestDataGridViewTextBoxColumn
+            // amountBilledTxtBox
             // 
-            this.clientnametestDataGridViewTextBoxColumn.DataPropertyName = "clientnametest";
-            this.clientnametestDataGridViewTextBoxColumn.HeaderText = "Client Name";
-            this.clientnametestDataGridViewTextBoxColumn.Name = "clientnametestDataGridViewTextBoxColumn";
+            this.amountBilledTxtBox.Location = new System.Drawing.Point(116, 191);
+            this.amountBilledTxtBox.Name = "amountBilledTxtBox";
+            this.amountBilledTxtBox.Size = new System.Drawing.Size(100, 20);
+            this.amountBilledTxtBox.TabIndex = 28;
             // 
-            // clientidtestDataGridViewTextBoxColumn
+            // amountBilledLbl
             // 
-            this.clientidtestDataGridViewTextBoxColumn.DataPropertyName = "clientidtest";
-            this.clientidtestDataGridViewTextBoxColumn.HeaderText = "Client ID";
-            this.clientidtestDataGridViewTextBoxColumn.Name = "clientidtestDataGridViewTextBoxColumn";
+            this.amountBilledLbl.AutoSize = true;
+            this.amountBilledLbl.Location = new System.Drawing.Point(37, 194);
+            this.amountBilledLbl.Name = "amountBilledLbl";
+            this.amountBilledLbl.Size = new System.Drawing.Size(43, 13);
+            this.amountBilledLbl.TabIndex = 27;
+            this.amountBilledLbl.Text = "Amount";
             // 
-            // idbillinginfotestDataGridViewTextBoxColumn
+            // viewReportBtn
             // 
-            this.idbillinginfotestDataGridViewTextBoxColumn.DataPropertyName = "idbillinginfotest";
-            this.idbillinginfotestDataGridViewTextBoxColumn.HeaderText = "Invoice ID";
-            this.idbillinginfotestDataGridViewTextBoxColumn.Name = "idbillinginfotestDataGridViewTextBoxColumn";
-            // 
-            // datebilledtestDataGridViewTextBoxColumn
-            // 
-            this.datebilledtestDataGridViewTextBoxColumn.DataPropertyName = "datebilledtest";
-            this.datebilledtestDataGridViewTextBoxColumn.HeaderText = "Date";
-            this.datebilledtestDataGridViewTextBoxColumn.Name = "datebilledtestDataGridViewTextBoxColumn";
-            // 
-            // amountbilledtestDataGridViewTextBoxColumn
-            // 
-            this.amountbilledtestDataGridViewTextBoxColumn.DataPropertyName = "amountbilledtest";
-            this.amountbilledtestDataGridViewTextBoxColumn.HeaderText = "Amount";
-            this.amountbilledtestDataGridViewTextBoxColumn.Name = "amountbilledtestDataGridViewTextBoxColumn";
+            this.viewReportBtn.Location = new System.Drawing.Point(204, 338);
+            this.viewReportBtn.Name = "viewReportBtn";
+            this.viewReportBtn.Size = new System.Drawing.Size(112, 23);
+            this.viewReportBtn.TabIndex = 29;
+            this.viewReportBtn.Text = "View Report";
+            this.viewReportBtn.UseVisualStyleBackColor = true;
+            this.viewReportBtn.Click += new System.EventHandler(this.viewReportBtn_Click);
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(855, 376);
+            this.Controls.Add(this.viewReportBtn);
+            this.Controls.Add(this.amountBilledTxtBox);
+            this.Controls.Add(this.amountBilledLbl);
             this.Controls.Add(this.refreshPayments);
             this.Controls.Add(this.deletePaymentBtn);
             this.Controls.Add(this.editPaymentBtn);
@@ -299,12 +344,12 @@
             this.Text = "Payments";
             this.Load += new System.EventHandler(this.Form2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.paymentsView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.billinginfotestBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.freelancetrackDataSet2BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.freelancetrackDataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.billinginfoBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fullBillingInfoTable)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.billinginfoBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.freelancetrackDataSet2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.freelancetrackDataSet2BindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.billinginfotestBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -341,5 +386,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn idbillinginfotestDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn datebilledtestDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn amountbilledtestDataGridViewTextBoxColumn;
+        private System.Windows.Forms.TextBox amountBilledTxtBox;
+        private System.Windows.Forms.Label amountBilledLbl;
+        private System.Windows.Forms.Button viewReportBtn;
     }
 }
